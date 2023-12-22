@@ -1,6 +1,11 @@
 import { LiaTimesSolid } from "react-icons/lia";
 
-const TodoItem = ({ todo, deleteTodo, toggleComplete }) => {
+import { GlobalContext } from "../context/GlobalContext";
+import { useContext } from "react"
+
+const TodoItem = ({ todo }) => {
+  const { deleteTodo, toggleComplete } = useContext(GlobalContext)
+
   return (
     <li className={`flex items-center justify-between bg-zinc-100 ${todo.completed ? "bg-zinc-300" : ""} mb-2 py-3 px-3`}>
         <div className="flex items-center gap-2 w-4/5">

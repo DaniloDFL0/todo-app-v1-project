@@ -1,4 +1,8 @@
-const Login = ({ name, setName, email, setEmail, password, setPassword, onSubmit, login }) => {
+import { GlobalContext } from "../context/GlobalContext"
+import { useContext } from "react"
+
+const Login = () => {
+  const { name, setName, email, setEmail, password, setPassword, onSubmit, login } = useContext(GlobalContext)
 
   return (
     <div className="relative flex justify-center top-52">
